@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Emotions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='chatbotStyle.css') }}">
+</head>
+<body>
+    <header>
+        <center>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="chat">
+            <h1><span class="decoration">Audio Emotions</span></h1>
+        </center>
+    </header>
+
+    <main>
+        <center>
+            <p class="output">
+                {{ prediction_text }}
+            </p>
+            <form action="/predict_route" method="post" enctype="multipart/form-data">
+                <input type="file" name="audio_file" accept="audio/*" class='Q'>
+                <input type="submit" value="Upload">
+            </form>
+        </center>
+    </main>
+    <footer></footer>
+</body>
+</html>
